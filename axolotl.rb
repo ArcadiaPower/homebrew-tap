@@ -5,15 +5,15 @@
 class Axolotl < Formula
   desc "A helper utility for switching AWS profiles in subshells."
   homepage "https://github.com/ArcadiaPower/axolotl/"
-  version "1.0.5-rc1"
+  version "1.0.5-rc2"
   license "MIT"
 
   depends_on "gimme-aws-creds"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.5-rc1/axolotl_1.0.5-rc1_darwin_arm64.tar.gz"
-      sha256 "ed83c4cffe27d4b0563b6bffc64d2818f4b927f2e58b2a54643a552bf52891da"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.5-rc2/axolotl_1.0.5-rc2_darwin_arm64.tar.gz"
+      sha256 "7b264e30392a53a2b6a04ebc534bc78725c90ffcd1c8937ec7a8f2597a89ec42"
 
       def install
         bin.install "ax"
@@ -23,8 +23,8 @@ class Axolotl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.5-rc1/axolotl_1.0.5-rc1_linux_arm64.tar.gz"
-      sha256 "8dc58100872f09af15f0d21d5768f84e161371a674d6d1a1763efa295a68689e"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.5-rc2/axolotl_1.0.5-rc2_linux_arm64.tar.gz"
+      sha256 "3472aaabbdb5cbba78dd8fb5f3c7e9c29039c5c2b690a6d0de07012342711a7b"
 
       def install
         bin.install "ax"
