@@ -5,23 +5,23 @@
 class Axolotl < Formula
   desc "A helper utility for switching AWS profiles in subshells."
   homepage "https://github.com/ArcadiaPower/axolotl/"
-  version "1.0.6-rc3"
+  version "1.0.6"
   license "MIT"
 
   depends_on "gimme-aws-creds"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6-rc3/axolotl_1.0.6-rc3_macOS_x86_64.tar.gz"
-      sha256 "fd02bf8e83ec1b01a357bf141567aaa589a86fa4f2aff7a3b7d1bf4623839a8f"
+    if Hardware::CPU.arm?
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6/axolotl_1.0.6_macOS_arm64.tar.gz"
+      sha256 "b7c96f3cc2ebf4cb82fbeaab1c54442997023573210969c19ce197efb52b770d"
 
       def install
         bin.install "ax"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6-rc3/axolotl_1.0.6-rc3_macOS_arm64.tar.gz"
-      sha256 "a75645b4b1f1c4bb0369e867d6c0886040d36155b1246a9083a9097463b84433"
+    if Hardware::CPU.intel?
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6/axolotl_1.0.6_macOS_x86_64.tar.gz"
+      sha256 "ea18568be885a417e70518f59e9234d2ddbba5473deef5fd7c0d2ca26bee9576"
 
       def install
         bin.install "ax"
@@ -31,16 +31,16 @@ class Axolotl < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6-rc3/axolotl_1.0.6-rc3_linux_x86_64.tar.gz"
-      sha256 "104cab3b6d0473a7d82ac4e49e7d7316b116f328cfa383b87ae459a967b50eb3"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6/axolotl_1.0.6_linux_x86_64.tar.gz"
+      sha256 "bfc3c3a5eeb8afff27e866a165598a99ead70f07fbb408f321705e7afb5ac751"
 
       def install
         bin.install "ax"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6-rc3/axolotl_1.0.6-rc3_linux_arm64.tar.gz"
-      sha256 "ad085c9102c5d961b1e5c6a347d2cf2625b4cbb7a5b19eb0c62673b782355c20"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6/axolotl_1.0.6_linux_arm64.tar.gz"
+      sha256 "a81a8a44222a97605f1d2f238be38fc89979d2814681e5ae6f7dca313196a0e9"
 
       def install
         bin.install "ax"
