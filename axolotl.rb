@@ -5,23 +5,23 @@
 class Axolotl < Formula
   desc "A helper utility for switching AWS profiles in subshells."
   homepage "https://github.com/ArcadiaPower/axolotl/"
-  version "1.0.6"
+  version "1.0.7"
   license "MIT"
 
   depends_on "gimme-aws-creds"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6/axolotl_1.0.6_macOS_arm64.tar.gz"
-      sha256 "b7c96f3cc2ebf4cb82fbeaab1c54442997023573210969c19ce197efb52b770d"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.7/axolotl_1.0.7_macOS_arm64.tar.gz"
+      sha256 "bbb05b9caf05880c4f41738660c04e0c3d8e81a626922948c21b820ef8f80387"
 
       def install
         bin.install "ax"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6/axolotl_1.0.6_macOS_x86_64.tar.gz"
-      sha256 "ea18568be885a417e70518f59e9234d2ddbba5473deef5fd7c0d2ca26bee9576"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.7/axolotl_1.0.7_macOS_x86_64.tar.gz"
+      sha256 "b5c762bd26cf22ab8598b891cb2dfc78273d174aaedac38acd30137b91ac0687"
 
       def install
         bin.install "ax"
@@ -30,17 +30,17 @@ class Axolotl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6/axolotl_1.0.6_linux_x86_64.tar.gz"
-      sha256 "bfc3c3a5eeb8afff27e866a165598a99ead70f07fbb408f321705e7afb5ac751"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.7/axolotl_1.0.7_linux_arm64.tar.gz"
+      sha256 "6900061416e5a8916ca82c302a5129301005d60f0d2b371f2fe68a654987554b"
 
       def install
         bin.install "ax"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.6/axolotl_1.0.6_linux_arm64.tar.gz"
-      sha256 "a81a8a44222a97605f1d2f238be38fc89979d2814681e5ae6f7dca313196a0e9"
+    if Hardware::CPU.intel?
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.7/axolotl_1.0.7_linux_x86_64.tar.gz"
+      sha256 "1dd68d951ff63747846bfd0282641604d877ddfc4dbc605a5cbe2712f6ef7877"
 
       def install
         bin.install "ax"
