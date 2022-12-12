@@ -5,23 +5,23 @@
 class Axolotl < Formula
   desc "A helper utility for switching AWS profiles in subshells."
   homepage "https://github.com/ArcadiaPower/axolotl/"
-  version "1.0.7"
+  version "1.0.8"
   license "MIT"
 
   depends_on "gimme-aws-creds"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.7/axolotl_1.0.7_macOS_arm64.tar.gz"
-      sha256 "bbb05b9caf05880c4f41738660c04e0c3d8e81a626922948c21b820ef8f80387"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.8/axolotl_1.0.8_macOS_arm64.tar.gz"
+      sha256 "6a7a62709c3d0edd3b3c1b5cbc5b2eff163354ac5a459b87bf236272a94a9193"
 
       def install
         bin.install "ax"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.7/axolotl_1.0.7_macOS_x86_64.tar.gz"
-      sha256 "b5c762bd26cf22ab8598b891cb2dfc78273d174aaedac38acd30137b91ac0687"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.8/axolotl_1.0.8_macOS_x86_64.tar.gz"
+      sha256 "0a13c91c7a837ff65d894547c6eb8396c14745a98edcc0eee43e82626d0bc2f3"
 
       def install
         bin.install "ax"
@@ -30,17 +30,17 @@ class Axolotl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.7/axolotl_1.0.7_linux_arm64.tar.gz"
-      sha256 "6900061416e5a8916ca82c302a5129301005d60f0d2b371f2fe68a654987554b"
+    if Hardware::CPU.intel?
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.8/axolotl_1.0.8_linux_x86_64.tar.gz"
+      sha256 "5a338f77abbe8d8eff9a01301841a94b8ca3cc37656297de2208dde138f1a354"
 
       def install
         bin.install "ax"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.7/axolotl_1.0.7_linux_x86_64.tar.gz"
-      sha256 "1dd68d951ff63747846bfd0282641604d877ddfc4dbc605a5cbe2712f6ef7877"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.0.8/axolotl_1.0.8_linux_arm64.tar.gz"
+      sha256 "328beee9632d0908fecb27ea114d4d3c6b7438e1fb5a398c38bcfc39f1015081"
 
       def install
         bin.install "ax"
