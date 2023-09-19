@@ -5,23 +5,23 @@
 class Axolotl < Formula
   desc "A helper utility for switching AWS profiles in subshells."
   homepage "https://github.com/ArcadiaPower/axolotl/"
-  version "1.1.0"
+  version "1.1.1"
   license "MIT"
 
   depends_on "gimme-aws-creds"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.1.0/axolotl_1.1.0_macOS_arm64.tar.gz"
-      sha256 "cf106513d745160dc9eed0a1f500033ad95fbb9aed88f308152903c338a947a5"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.1.1/axolotl_1.1.1_macOS_arm64.tar.gz"
+      sha256 "91210d652647e5ec66355e048d0d7f3cb54886e11bca6fa953664192ac2b38fd"
 
       def install
         bin.install "ax"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.1.0/axolotl_1.1.0_macOS_x86_64.tar.gz"
-      sha256 "86a7a8b3c6c64a3885ef09b1b49ac0df355cf461b8c9025b44be10bd0cff5178"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.1.1/axolotl_1.1.1_macOS_x86_64.tar.gz"
+      sha256 "088000b75a36cd00fa2a9c898d75bc9891cdd1c27adafa73a42f595475d5f1f5"
 
       def install
         bin.install "ax"
@@ -31,33 +31,21 @@ class Axolotl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.1.0/axolotl_1.1.0_linux_arm64.tar.gz"
-      sha256 "28a0781fcdd4d5a4f13c49a7a59458c011e5ed9548a2de05efa43f8002b20207"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.1.1/axolotl_1.1.1_linux_arm64.tar.gz"
+      sha256 "0a07abac872f89a7345755e888f14d4e942c4f689b7c457c94327269ca387e52"
 
       def install
         bin.install "ax"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.1.0/axolotl_1.1.0_linux_x86_64.tar.gz"
-      sha256 "43b71e6fbddaadc2dd6a7b541c503473f3ca4f57bebcca857bc61712923ebdca"
+      url "https://github.com/ArcadiaPower/axolotl/releases/download/v1.1.1/axolotl_1.1.1_linux_x86_64.tar.gz"
+      sha256 "93730bfa5bc9c9c6ab752fa629f5ffb904c4d2d9a895c6975cc77b8be8f21585"
 
       def install
         bin.install "ax"
       end
     end
-  end
-
-  def caveats
-    <<~EOS
-      To install shell completion add the following line to your #{shell_profile}:
-      	BASH:
-      	eval "$(ax --completion-script-bash)"
-      	ZSH:
-      	eval "$(ax --completion-script-zsh)"
-
-      Restart your terminal for the settings to take effect.
-    EOS
   end
 
   test do
